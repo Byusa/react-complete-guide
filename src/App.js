@@ -1,6 +1,5 @@
-import './App.css';
-import ExpenseItem from './components/ExpenseItem'
-import Expenses from './components/Expenses'
+import React from 'react'
+import Expenses from './components/Expenses/Expenses'
 
 
 function App() {
@@ -10,27 +9,21 @@ function App() {
     {id: 'e1', title: 'House Insurance3', amount: 192.67, date: new Date(2021, 12, 28)}, 
     {id: 'e1', title: 'Business Insurance4', amount: 392.67, date: new Date(2021, 4, 28)}, 
   ]
-  return (
-    <div className="App">
-      <div>Hey sd</div>
-      {/* {Object.keys(expenses).map((index, exp) => {
-        <ExpenseItem 
-        key={index}
-        title={exp.title} 
-        amount={exp.amount}
-        date={exp.date}
-        /> 
-      })} */}
 
+  return (
+    <div>
+      <h2>Let's get started!</h2>
       <Expenses items={expenses}/> 
-      
-      {/* <ExpenseItem 
-      title={props.title} 
-      amount={props.amount}
-      date={props.date}
-     /> */}
     </div>
   );
+  
+  // //under the hood code created when you create this
+  // return React.createElement(
+  //   'div',
+  //   {},
+  //   React.createElement('h2', {}, "Let's get started!"),
+  //   React.createElement(Expenses, { items: expenses })
+  // );
 }
 
 export default App;
